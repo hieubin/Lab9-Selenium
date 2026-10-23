@@ -2,9 +2,8 @@
 
 ## 1. Thông tin chung
 
-- **Sinh viên / nhóm:** <họ tên, MSSV>
-- **Môn học:** <tên môn>
-- **Giảng viên:** <tên giảng viên>
+- **Sinh viên** Nguyễn Đức Hiếu
+- **Mã sinh viên:** 2301061
 - **Website kiểm thử:** https://the-internet.herokuapp.com
 - **Công cụ chính:** Selenium WebDriver (Python)
 - **Số test case:** 6 (yêu cầu tối thiểu 5)
@@ -109,30 +108,7 @@ Tổng kết: **6 test case, 6 passed, 0 failed.**
 
 ![Báo cáo HTML](screenshots/report.png)
 
-## 11. Khó khăn gặp phải và cách khắc phục
-
-| Vấn đề | Nguyên nhân | Cách khắc phục |
-|--------|-------------|----------------|
-| `python -m pip` báo "No module named pip" | Lệnh `python` trỏ vào Python của MSYS2 thay vì Python cài từ python.org | Dùng `py -3.10 -m venv venv` để tạo môi trường ảo bằng đúng bản Python, sau đó chỉ dùng `python` trong venv |
-| pytest báo `collected 0 items` | Chưa tạo thư mục `tests` và file test đúng tên | Tạo `tests/test_internet.py` (tên file và tên hàm phải bắt đầu bằng `test_`) |
-| TC03 thất bại với `AssertionError` | Nội dung thông báo kỳ vọng ghi sai ("a secure area"), trong khi trang hiển thị "the secure area" | Đối chiếu với nội dung thực tế của trang và sửa lại câu kỳ vọng trong `assert` |
-| Lỗi do thao tác khi trang chưa tải xong (`NoSuchElementException`, `StaleElementReferenceException`) | Tìm phần tử ngay khi trang còn đang tải hoặc vẽ lại | Dùng `WebDriverWait` chờ phần tử hiển thị hoặc bấm được trước khi thao tác |
-
-## 12. Bài học rút ra
-
-- Phải đối chiếu kết quả mong đợi với nội dung thực tế của trang, chỉ lệch một từ cũng làm test thất bại.
-- Dùng chờ tường minh (`WebDriverWait`) giúp test ổn định hơn và nhanh hơn `time.sleep()`.
-- Mỗi test mở một trình duyệt mới để các test độc lập, lỗi test này không ảnh hưởng test khác.
-- Tách các bước lặp lại (chờ, bấm, đăng nhập) thành hàm dùng chung giúp code gọn và dễ bảo trì.
-- Dùng môi trường ảo `venv` để tránh xung đột phiên bản Python và thư viện.
-
-## 13. Hạn chế và hướng phát triển
-
-- Mới chạy trên Chrome, chưa chạy trên Firefox hoặc Edge.
-- Chưa kiểm thử các chức năng phức tạp hơn như upload file, alert, kéo thả.
-- Có thể mở rộng bằng mô hình Page Object, chụp ảnh màn hình khi test thất bại và chạy test song song.
-
-## 14. Tài liệu tham khảo
+## 11. Tài liệu tham khảo
 
 - <tên video / link hướng dẫn Selenium đã xem>
 - Tài liệu chính thức Selenium: https://www.selenium.dev/documentation/
